@@ -1,5 +1,7 @@
 {
   "dependencies": {
-    "excel": "^1.0.0"
+    "excel": "^1.0.0",
+    "request": "^2.87.0",
+    "request-promise": "^4.2.2"
   }
 }
