@@ -1,7 +1,22 @@
 {
+  "name": "btjoa",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "excel": "^1.0.0",
+    "bootstrap": "^4.0.0-alpha.6",
+    "react": "^16.4.1",
+    "react-addons-css-transition-group": "^15.6.2",
+    "react-addons-transition-group": "^15.6.2",
+    "react-dom": "^16.4.1",
+    "react-scripts": "1.1.4",
+    "reactstrap": "^6.1.0",
     "request": "^2.87.0",
     "request-promise": "^4.2.2"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   }
 }
