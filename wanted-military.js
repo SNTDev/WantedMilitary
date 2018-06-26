@@ -32,6 +32,7 @@ async function get_list_from_wanted() {
                     company_name: company_data['company_name'],
                     position: company_data['position'],
                     logo_img: company_data['logo_img'],
+                    title_img: company_data['title_img'],
                     recruit_page: 'wanted',
                     recruit_id: company_data['id'],
                 })
