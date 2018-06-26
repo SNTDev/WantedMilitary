@@ -11,8 +11,8 @@ class App extends Component {
     return (
       <Card body style={{margin: "20px"}}>
             <CardTitle>{wantedMilitaryList[index].company_name}</CardTitle>
-            <CardText>{wantedMilitaryList[index].position}</CardText>
-            <Button>Go somewhere</Button>
+            <CardText style={{fontWeight:"300",paddingLeft: "5%"}}>{wantedMilitaryList[index].position}</CardText>
+            <a class={"effect-underline"}>Go somewhere</a>
     </Card>
     );
   }
