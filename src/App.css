@@ -67,7 +67,6 @@
   cursor: pointer;
 }
 
-
 a.effect-underline:after {
 	content: '';
   position: absolute;

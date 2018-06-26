@@ -9,15 +9,13 @@ import wantedMilitaryList from './WantedList.json';
 class App extends Component {
   getWantedCardWithIndex(index) {
     return (
-      <Card style={{ margin: "20px"}}>
-        <a href={'https://www.wanted.co.kr/wd/' + wantedMilitaryList[index].recruit_id} style={{ textDecoration: 'none', color:'black' }}>
-          <CardImg top width="100%" height="200px" src={wantedMilitaryList[index].title_img} />
+      <Card body style={{ margin: "20px" }}>
+          <CardImg top height="200px" src={wantedMilitaryList[index].title_img} />
           <CardBody>
-            <img height="32px" width="32px" src={wantedMilitaryList[index].logo_img} style={{"display":"inline"}}/>
-            <CardTitle style={{"display":"inline"}}>{wantedMilitaryList[index].company_name}</CardTitle> 
-            <CardText>{wantedMilitaryList[index].position}</CardText>
+            <CardTitle>{wantedMilitaryList[index].company_name}</CardTitle>
+            <CardText style={{ fontWeight: "300", paddingLeft: "5%" }}>{wantedMilitaryList[index].position}</CardText>
           </CardBody>
-        </a>
+          <a href={'https://www.wanted.co.kr/wd/' + wantedMilitaryList[index].recruit_id} class="effect-underline">지원하러 가기</a>
       </Card>
     );
   }
