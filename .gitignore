@@ -4,6 +4,9 @@ List.txt
 # dependencies
 /node_modules
 
+# python venv
+server_src/wanted_mil_server
+
 # testing
 /coverage
 
