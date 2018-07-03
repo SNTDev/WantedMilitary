@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.css';
-import './App.css';
+import '../css/App.css';
 import LazyLoad from 'react-lazy-load';
 import { Card, Button, CardImg, CardBody, CardTitle, CardText, Row, Col, CardDeck } from 'reactstrap';
-import wantedMilitaryList from './WantedList.json';
+import wantedMilitaryList from '../WantedList.json';
 
 class App extends Component {
   getWantedCardWithIndex(index) {
