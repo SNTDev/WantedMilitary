@@ -32,6 +32,12 @@
   background-color: #f6f6f6;
 }
 
+.contents {
+  margin: auto;
+  width: 75%;
+  padding: 10px;
+}
+
 li {
   width: 25%;
   float: left;

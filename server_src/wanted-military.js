@@ -10,39 +10,50 @@ const wanted_military_list = [];
 
 function check_string_in_list(company_name) {
     for (let i = 0; i < military_list.length; i++) {
-        if(company_name.includes(military_list[i])) return true;
+        if (company_name.includes(military_list[i])) return true;
     }
 
     return false;
 }
 
 async function get_list_from_wanted() {
+    console.log('Wanted List Refresh Start');
+
     let url = wanted_start_url;
-    do {
-        const options = {
-            uri: 'https://www.wanted.co.kr' + url,
-            json: true,
-        };
+    try {
+        do {
+            const options = {
+                uri: 'https://www.wanted.co.kr' + url,
+                json: true,
+            };
 
-        const data = await rp(options);
+            const data = await rp(options);
 
-        data.data.jobs.data.map((company_data) => {
-            if(check_string_in_list(company_data['company_name'])) {
-                wanted_military_list.push({
-                    company_name: company_data['company_name'],
-                    position: company_data['position'],
-                    logo_img: company_data['logo_img'],
-                    title_img: company_data['title_img'],
-                    recruit_page: 'wanted',
-                    recruit_id: company_data['id'],
-                })
-            }
-        });
+            data.data.jobs.data.map((company_data) => {
+                if (check_string_in_list(company_data['company_name'])) {
+                    wanted_military_list.push({
+                        company_name: company_data['company_name'],
+                        position: company_data['position'],
+                        logo_img: company_data['logo_img'],
+                        title_img: company_data['title_img'],
+                        recruit_page: 'wanted',
+                        recruit_id: company_data['id'],
+                    })
+                }
+            });
 
-        url = data.links.next;
-    } while (url != null);
+            url = data.links.next;
+        } while (url != null);
 
-    let file = fs.writeFileSync('WantedList.json', JSON.stringify(wanted_military_list), 'utf8');
+    } catch (e) {
+        console.log(e);
+        return;
+    }
+
+    let file = fs.writeFileSync('../WantedList.json', JSON.stringify(wanted_military_list), {encoding:'utf8', flag:'w'});
+
+    console.log('Wanted List Refresh Finish');
 }
 
 get_list_from_wanted();
+setInterval(get_list_from_wanted, 1000 * 60 * 60 * 24);

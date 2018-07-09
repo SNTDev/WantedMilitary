@@ -10,9 +10,10 @@ const config = {
         filename: 'bundle.js',
     },
     plugins: [
-        new HtmlWebpackPlugin({
-            template: __dirname + '/templates/index.html',
-        }),
+        // new HtmlWebpackPlugin({
+        //     inject: 'body',
+        //     template: __dirname + '/templates/index.html',
+        // }),
         new ExtractTextPlugin('style.css'),
     ],
     resolve: {
